@@ -5,6 +5,9 @@
 # https://symfony.com/doc/current/best_practices/configuration.html#application-related-configuration
 parameters:
     jwt_secret: alIZyvYtZ8NnFoI7WXNuaFMyMxWhFX38
+    elastic_search_cloud_id: i-o-optimized-deployment:ZWFzdHVzMi5henVyZS5lbGFzdGljLWNsb3VkLmNvbTo5MjQzJDMwNGFhODc3YjJmMTRlMDdhNzQ3N2I5Njg2MWYzOTM1JGQyYmY5OWYyOGE1YjRkMjg5YmNlYmNiZjdmMDZhYjdk
+    elastic_search_username: elastic
+    elastic_search_password: oWU9yRKrubPKri8Y6YllBRRg
 
 services:
     # default configuration for services in *this* file
