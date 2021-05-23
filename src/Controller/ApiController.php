@@ -7,7 +7,6 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Routing\Annotation\Route;
-use Elasticsearch\ClientBuilder;
 
 
 
@@ -48,7 +47,7 @@ class ApiController extends AbstractController
             $start = $request->query->get("start_date");
             $end = $request->query->get("end_date");
     
-            $t = new ElasticQueries($start, $end);
+            $t = new ElasticQueries();
             return new jsonResponse($t->getMostPopularSku());
 
         } catch (\Throwable $th) {

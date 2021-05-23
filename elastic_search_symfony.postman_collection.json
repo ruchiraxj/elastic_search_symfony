@@ -1,0 +1,287 @@
+{
+	"info": {
+		"_postman_id": "5746617f-676d-432a-a6d3-0abd8c08313e",
+		"name": "elastic_search_symfony",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "User - Register",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost/symfony_elastic_search/elastic_search_symfony/public/index.php/auth/register?email=hello@test.com&password=123123",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"symfony_elastic_search",
+						"elastic_search_symfony",
+						"public",
+						"index.php",
+						"auth",
+						"register"
+					],
+					"query": [
+						{
+							"key": "email",
+							"value": "hello@test.com"
+						},
+						{
+							"key": "password",
+							"value": "123123"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "User - Login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost/symfony_elastic_search/elastic_search_symfony/public/index.php/auth/login?email=hello@test.com&password=123123",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"symfony_elastic_search",
+						"elastic_search_symfony",
+						"public",
+						"index.php",
+						"auth",
+						"login"
+					],
+					"query": [
+						{
+							"key": "email",
+							"value": "hello@test.com"
+						},
+						{
+							"key": "password",
+							"value": "123123"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Sort Order By Location",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyIjoiaGVsbG9AdGVzdC5jb20iLCJleHAiOjE2MjE3MTExMjR9.XwQEILvPia8xycJDPcZI3LdbsXwuRyYL0k6tCBkyxy8",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "",
+						"value": "",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost/symfony_elastic_search/elastic_search_symfony/public/index.php/api/ecom/order-by-location?start_date=2021-05-01&end_date=2021-05-23",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"symfony_elastic_search",
+						"elastic_search_symfony",
+						"public",
+						"index.php",
+						"api",
+						"ecom",
+						"order-by-location"
+					],
+					"query": [
+						{
+							"key": "start_date",
+							"value": "2021-05-01"
+						},
+						{
+							"key": "end_date",
+							"value": "2021-05-23"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Most Popular SKU",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyIjoiaGVsbG9AdGVzdC5jb20iLCJleHAiOjE2MjE3MTExMjR9.XwQEILvPia8xycJDPcZI3LdbsXwuRyYL0k6tCBkyxy8",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "",
+						"value": "",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost/symfony_elastic_search/elastic_search_symfony/public/index.php/api/ecom/most-popular-sku?start_date=2021-05-01&end_date=2021-05-23",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"symfony_elastic_search",
+						"elastic_search_symfony",
+						"public",
+						"index.php",
+						"api",
+						"ecom",
+						"most-popular-sku"
+					],
+					"query": [
+						{
+							"key": "start_date",
+							"value": "2021-05-01"
+						},
+						{
+							"key": "end_date",
+							"value": "2021-05-23"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "SKUs Bought Together",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyIjoiaGVsbG9AdGVzdC5jb20iLCJleHAiOjE2MjE3NjA0ODR9.o6tTUvwO-FmK_aUdCy7BdmnmWdk0IESevTjIwgS1cDM",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "",
+						"value": "",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost/symfony_elastic_search/elastic_search_symfony/public/index.php/api/ecom/sku-bought-together?start_date=2021-05-01&end_date=2021-05-23&sku=ZO0403504035&page=1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"symfony_elastic_search",
+						"elastic_search_symfony",
+						"public",
+						"index.php",
+						"api",
+						"ecom",
+						"sku-bought-together"
+					],
+					"query": [
+						{
+							"key": "start_date",
+							"value": "2021-05-01"
+						},
+						{
+							"key": "end_date",
+							"value": "2021-05-23"
+						},
+						{
+							"key": "sku",
+							"value": "ZO0403504035"
+						},
+						{
+							"key": "page",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
