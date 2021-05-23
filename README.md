@@ -17,4 +17,6 @@
 3. Execute "User - Login" and obtain JW Token and update Authentication header in other API calls with this
 4. Execute other APIs using necessary parameters
 
-###### NOT: API URLS might need to change according to your localhost environment
+### NOTES: 
+##### API URLS might need to change according to your localhost environment
+##### Elastic Search logics are stored in src/Services/ElasticQueries.php
