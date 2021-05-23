@@ -2,11 +2,11 @@
 
 ## Set up server
 
-1. clone repo
-2. go inside the folder
-3. run composer install
+1. Clone repo
+2. Go inside the folder
+3. Run composer install
 4. Creaete a new database "es_symfony" and change DB configs in /.env file
-5. run database migration using "php bin/console doctrine:migrations:migrate"
+5. Run database migration using "php bin/console doctrine:migrations:migrate"
 
 ## Execute APIs
 
