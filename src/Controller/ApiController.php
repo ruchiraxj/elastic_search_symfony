@@ -47,7 +47,7 @@ class ApiController extends AbstractController
             $start = $request->query->get("start_date");
             $end = $request->query->get("end_date");
     
-            $t = new ElasticQueries();
+            $t = new ElasticQueries($start, $end);
             return new jsonResponse($t->getMostPopularSku());
 
         } catch (\Throwable $th) {
