@@ -54,7 +54,7 @@ class AuthController extends AbstractController
         if (!$user || !$encoder->isPasswordValid($user, $request->get('password'))) {
             return $this->json([
                 'message' => 'email or password is wrong.',
-            ], 401);
+            ], Response::HTTP_UNAUTHORIZED);
         }
         $payload = [
             "user" => $user->getUsername(),
