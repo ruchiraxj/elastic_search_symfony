@@ -62,6 +62,8 @@ class ElasticQueries
             ]
         ];
 
+        echo json_encode($params);die;
+
         $response = $this->client->search($params);
         if (!isset($response['aggregations']['group_by_location']['buckets'])) {
             throw new Exception("Invalid Response");
@@ -111,6 +113,12 @@ class ElasticQueries
 
     public function getSkuBoughtTogether($sku, $page = 1)
     {
+        if ($page == 1) {
+            $from = 0;
+        } else {
+            $from = (($page - 1) * $this->limit);
+        }
+
         $params = [];
         $params['index'] = $this->index;
         $params['body'] = [
@@ -142,6 +150,15 @@ class ElasticQueries
                         'exclude' => $sku,
                         'size' => '10000',
                     ],
+                    "aggs" => [
+                        "pagination_sort" => [
+                          "bucket_sort" => [
+                            "sort" => [],
+                            "size" => $this->limit,
+                            "from" => $from
+                          ] 
+                        ]
+                    ]
                 ],
             ],
         ];
@@ -152,17 +169,8 @@ class ElasticQueries
             throw new Exception("Invalid Response");
         }
 
-        return $this->paginateResult($response['aggregations']['people_also_bought']['buckets'], $page);
+        return $response['aggregations']['people_also_bought']['buckets'];
     }
 
 
-    private function paginateResult($arr, $page){
-        if ($page == 1) {
-            $from = 0;
-        } else {
-            $from = (($page - 1) * $this->limit);
-        }
-
-        return array_slice($arr, $page, $this->limit);
-    }
 }
